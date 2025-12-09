@@ -1,0 +1,14 @@
+# Parcel and what it can do for me
+- Dev Build
+- Local  Server
+- HMR = Hot Modules Replacement
+- File Watching Algorithm - written in c++
+- Caching = This is the reason parcel has a Faster Builds
+- Image Optimization
+- Minification
+- Bundling
+- Compressing
+- Consistent Hashing
+- Code Splitting
+- Tree shaking - Remove unused code for me 
+- Diagnostics
