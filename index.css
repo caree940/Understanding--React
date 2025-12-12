@@ -55,3 +55,8 @@
 .search{
     padding: 10px;
 }
+
+.filter-btn{
+    padding: 5px;
+    cursor: pointer;
+}

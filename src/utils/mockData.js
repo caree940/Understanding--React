@@ -1,54 +1,4 @@
-
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/*
-* Header
-- logo
-- Nav-items
-* Body
-- Search-bar
-- RestaurantContainer(
-  Restaurant Card)
-* Footer
-- copyright
-- links 
-*/
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logoContainer">
-                <img className="logo" src="https://marketplace.canva.com/EAGHzuEFphw/2/0/1600w/canva-black-and-white-minimalist-circle-restaurant-food-logo-VJaaNSmdIkc.jpg"/>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-const RestaurantCard = (props ) => {
-    const {resData} = props;
-    const {name,cuisines,avgRating,costForTwo,deliveryTime} = resData?.data
-    return (
-        <div className="res-card">
-            <img className ="card-image" src=
-                "https://t3.ftcdn.net/jpg/07/84/28/54/360_F_784285438_bObpyYd1w63mpCRiAkF06pNRxU7m1DPb.jpg" alt="card-logo"/>
-            <h3>{name}</h3>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{avgRating}</h4>
-            <h4>${costForTwo / 100} FOR TWO</h4>
-            <h4>{deliveryTime} minutes</h4>
-        </div>
-    )} 
-
-    const resList = [
+const resList = [
           {
     type: "restaurant",
     data: {
@@ -168,7 +118,7 @@ const RestaurantCard = (props ) => {
         iconType: "EMPTY",
       },
       promoted: true,
-      avgRating: "4.0",
+      avgRating: "4.3",
       totalRatings: 5000,
       new: false,
     },
@@ -288,7 +238,7 @@ const RestaurantCard = (props ) => {
         iconType: "EMPTY",
       },
       promoted: false,
-      avgRating: "3.8",
+      avgRating: "4.8",
       totalRatings: 50,
       new: false,
     },
@@ -653,7 +603,7 @@ const RestaurantCard = (props ) => {
         iconType: "EMPTY",
       },
       promoted: false,
-      avgRating: "4.0",
+      avgRating: "4.6",
       totalRatings: 1000,
       new: false,
     },
@@ -1256,29 +1206,4 @@ const RestaurantCard = (props ) => {
   },
     ];
 
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">Search-bar</div>
-            <div className="res-container">
-                {
-                    resList.map((restaurant) => (
-                    <RestaurantCard key={restaurant.data.id} resData={restaurant}/>))
-                }
-            </div>
-        </div>
-    )
-}
-
-const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header/>
-            <Body/>
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout/>);
+    export default resList;
