@@ -4,6 +4,8 @@
 //The is how to export more than one thing
 
 
-export const LOGO_URL = "https://marketplace.canva.com/EAGHzuEFphw/2/0/1600w/canva-black-and-white-minimalist-circle-restaurant-food-logo-VJaaNSmdIkc.jpg";
+export const LOGO_URL = 
+"https://marketplace.canva.com/EAGHzuEFphw/2/0/1600w/canva-black-and-white-minimalist-circle-restaurant-food-logo-VJaaNSmdIkc.jpg";
 
-export const CARD_URL = "https://t3.ftcdn.net/jpg/07/84/28/54/360_F_784285438_bObpyYd1w63mpCRiAkF06pNRxU7m1DPb.jpg";
+export const IMG_CDN_URL =
+  "https://media-assets.swiggy.com/swiggy/image/upload/";
