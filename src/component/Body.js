@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 
@@ -97,7 +98,12 @@ const Body = () => {
             if (!info) return null;
 
             // Use id + index to ensure unique key
-            return <RestaurantCard key={`${info.id}-${index}`} resData={restaurant.info} />;
+            return( 
+            <Link 
+            key={`${info.id}-${index}`}  
+            to={"/restaurant/"+ info.id}>
+              <RestaurantCard resData={restaurant.info} /></Link>
+          )
           })
         )}
       </div>
