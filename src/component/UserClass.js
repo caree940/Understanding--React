@@ -10,21 +10,29 @@ class UserClass extends React.Component {
 
         // how to write useState in class based component
            this.state = {
-            // count: 0,
-            // count2: 1
+           userInfo: {
+        
+           }
         };
 
         //console.log(this.props.name + "Child Constructor")
     }
 
-    componentDidMount(){
+    async componentDidMount(){
         //console.log(this.props.name + "Child Component Mount")
+        const data = await fetch("https://api.github.com/users/caree940");
+        const json = await data.json();
+
+        this.setState({
+            userInfo: json
+        })
+        console.log(json);
     }
 
     render(){
         //console.log(this.props.name + "Child render")
         //this how we destructure props in class component
-        const {name, location, contact} = this.props
+        const {name, location, contact, bio, avatar_url} = this.state.userInfo;
         //this how we destructure state in class component
         // const {count, count2} = this.state
         return(
@@ -38,9 +46,10 @@ class UserClass extends React.Component {
                       count2: this.state.count2 + 2
                     })
                 }}>count increase</button> */}
-            <h1>{name}</h1>
-            <h2>{location}</h2>
-            <h3>{contact}</h3>
+                <img src={avatar_url}/>
+            <h1>Name: {name}</h1>
+            <h2>Location: {location}</h2>
+            <h3>Bio: {bio}</h3>
         </div>
         )
     }
