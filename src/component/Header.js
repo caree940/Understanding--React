@@ -10,38 +10,38 @@ const Header = () => {
   const onLineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
+    <div className="flex justify-between sticky top-0 z-50 shadow-md bg-white m-2">
       <div className="logoContainer">
-        <img className="logo" src={LOGO_URL} />
+        <img className="w-24" src={LOGO_URL} />
       </div>
-      <div className="nav-items">
-        <ul>
-         <li className="status">
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4 gap-3">
+         <li className="status px-4 font-semibold">
          Online:<span
          className={`status-dot ${onLineStatus ? "online" : "offline"}`}
           />
       </li>
-          <li>
+          <li className="px-4 font-bold">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-4 font-bold">
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="px-4 font-bold">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li className="px-4 font-bold">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>
+          <li className="px-4 font-bold">
             <Link to="/cart">Cart</Link>
           </li>
-          <button className="login-btn" onClick={() => {
+        </ul>
+         <button className="login-btn py-2 px-4 bg-red-400 rounded-lg mr-3 font-semibold text-md" onClick={() => {
               btnNameReact === "Login" 
               ? setBtnNameReact("Logout")
               : setBtnNameReact("Login");
           }}>{ btnNameReact}</button>
-        </ul>
       </div>
     </div>
   );

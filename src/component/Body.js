@@ -34,18 +34,18 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="filter">
-        <div className="search-container">
+      <div className="filter flex items-center justify-between">
+        <div className="search-container m-2 p-2 ">
           <input
             type="text"
-            className="search-input"
+            className="search-input border border-solid border-black py-2 px-2 rounded-md"
             placeholder="Search restaurants"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
 
           <button
-            className="search-btn"
+            className="search-btn px-4 py-2 bg-green-200 m-4 rounded-lg"
             onClick={() => {
               const filtered = allRestaurants.filter((res) =>
                 res?.info?.name
@@ -58,13 +58,14 @@ const Body = () => {
             Search
           </button>
         </div>
-
-        <button className="filter-btn" onClick={filterTopRated}>
+        <div className="px-4 py-2">
+        <button className="filter-btn px-4 py-2 bg-gray-200 rounded-lg" onClick={filterTopRated}>
           Top Rated Restaurant
         </button>
+        </div>
       </div>
 
-      <div className="res-container">
+      <div className="res-container grid grid-cols-4">
         {filteredRestaurant.length === 0 ? (
           <h3>No restaurants found</h3>
         ) : (
